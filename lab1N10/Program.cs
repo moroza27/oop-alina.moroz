@@ -26,3 +26,15 @@ public class Computer
     Console.WriteLine("Benchmark completed!");
   }
 }
+class Program
+{
+    static void Main()
+    {
+        Computer pc = new Computer("Intel Core i7", 16, 512);
+
+        pc.RunBenchmark();
+
+        Console.WriteLine("Press any key to exit...");
+        Console.ReadKey();
+    }
+}
