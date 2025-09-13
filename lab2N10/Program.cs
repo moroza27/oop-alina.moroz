@@ -53,7 +53,7 @@ public class Time
     public static Time operator -(Time t, int m)
     {
         int totalMinutes = t.hour * 60 + t.minutes - m;
-        if (totalMinutes < 0) totalMinutes += 24 * 60; 
+        if (totalMinutes < 0) totalMinutes += 24 * 60;
         int newHour = (totalMinutes / 60) % 24;
         int newMinutes = totalMinutes % 60;
         return new Time(newHour, newMinutes, t.seconds);
@@ -62,5 +62,19 @@ public class Time
     public void ShowTime()
     {
         Console.WriteLine($"Time is {Hour:D2}:{Minutes:D2}:{Seconds:D2}");
+    }
+}
+class Program
+{
+    static void Main()
+    {
+        Time t = new Time(10, 45, 30);
+        t.ShowTime();
+
+        t = t + 30;
+        t.ShowTime();
+
+        t = t - 50;
+        t.ShowTime();
     }
 }
